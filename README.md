@@ -4,7 +4,7 @@ The scope of this project is only educational, to exercise my vuejs skills.
 
 ## Requirements
 
-The need `vue-cli` to run the project.
+You need `vue-cli` to run the project.
 
 ```
 npm install -g @vue/cli
