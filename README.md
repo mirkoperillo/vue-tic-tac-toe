@@ -1,24 +1,20 @@
-# connect4-vue
+This is a porting of the [react tutorial](https://reactjs.org/tutorial/tutorial.html) into vuejs.
 
-## Project setup
-```
-npm install
-```
+The scope of this project is only educational, to exercise my vuejs skills.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Requirements
 
-### Compiles and minifies for production
+The need `vue-cli` to run the project.
+
 ```
-npm run build
+npm install -g @vue/cli
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Usage
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. project setup `npm install`
+2. project run `npm run serve`
+
+## License
+
+This project is release under CC0 license (Creative Commons Zero)

@@ -6,26 +6,27 @@
   You should have received a copy of the CC0 Public Domain Dedication along with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <template>
-  <game />
+  <button @click="toggleSort">Sort {{order}}</button>
 </template>
 
 <script>
-import Game from '@/components/Game'
+import { mapActions, mapGetters } from 'vuex'
 export default {
-  components: {
-    Game
+  methods: {
+    toggleSort() {
+      this.sortHistory()
+    },
+    ...mapActions([
+      'sortHistory'
+    ])
+  },
+  computed: {
+    order() {
+      return this.sortHistoryAscending ? 'A' : 'D'
+    },
+    ...mapGetters([
+      'sortHistoryAscending'
+    ])
   }
 }
 </script>
-
-<style>
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
-
-ol, ul {
-  padding-left: 30px;
-  list-style-type: none;
-}
-</style>

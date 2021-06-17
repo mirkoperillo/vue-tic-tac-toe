@@ -6,26 +6,29 @@
   You should have received a copy of the CC0 Public Domain Dedication along with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <template>
-  <game />
+  <div>
+    <ul v-for="snapshot in orderedList" :key="snapshot.move">
+      <history-button :snapshot="snapshot"/>
+    </ul>
+  </div>
 </template>
 
 <script>
-import Game from '@/components/Game'
+import HistoryButton from '@/components/HistoryButton'
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    orderedList() {
+      return this.sortHistoryAscending ? this.historyList : this.historyList.slice().reverse()
+    },
+    ...mapGetters([
+      'historyList',
+      'sortHistoryAscending'
+    ])
+  },
   components: {
-    Game
+    HistoryButton
   }
 }
 </script>
-
-<style>
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
-
-ol, ul {
-  padding-left: 30px;
-  list-style-type: none;
-}
-</style>
